@@ -1,0 +1,9 @@
+
+nohup.out
+*.png
+save
+mmd_distance
+data
+tools/mdistiller/models/cifar/cifar10_teachers/
+tools/mdistiller/models/cifar/cifar100_teachers/
+
