@@ -1,0 +1,30 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "tkd,res32,res20"
+  PROJECT: "cifar100_tld"
+DISTILLER:
+  TYPE: "TKD"
+  TEACHER: "resnet32"
+  STUDENT: "resnet20"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0003
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+TKD:
+  CE_WEIGHT: 1.0
+  WARMUP: 20
+  T_s: 4
+  T: 2
+  T_A: 4
+  T_B: 10
+  CONF: 0.8
+  A: 1
+  B: 4
+  C: 4
+  N: 110
+  MIN: 0.3

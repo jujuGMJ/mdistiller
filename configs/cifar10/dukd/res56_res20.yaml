@@ -1,0 +1,29 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "tkd,res56,res20"
+  PROJECT: "cifar100_dukd"
+DISTILLER:
+  TYPE: "DUKD"
+  TEACHER: "resnet56"
+  STUDENT: "resnet20"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0003
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+DUKD:
+  CE_WEIGHT: 1.0
+  #KD_WEIGHT: 3.0
+  DUKD_WEIGHT: 0.3
+  WARMUP: 20     # warmup轮次
+  T_t: 4.0
+  T_s: 4.0
+  A: 0.7
+  B: 0.3
+  MIN_N: 0.3
+  N: 30
+  TEMPERATURE: 1.0

@@ -1,0 +1,36 @@
+EXPERIMENT:
+  NAME: ""
+  TAG: "res50,res20"
+  PROJECT: "cifar100_dukd"
+DISTILLER:
+  TYPE: "DUKD"
+  TEACHER: "ResNet50"
+  STUDENT: "resnet20"
+DATASET:
+  TYPE: "cifar100"
+SOLVER:
+  BATCH_SIZE: 64
+  EPOCHS: 240
+  LR: 0.05
+  LR_DECAY_STAGES: [150, 180, 210]
+  LR_DECAY_RATE: 0.1
+  WEIGHT_DECAY: 0.0003
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+DUKD:
+    #BETA: 1.2      # 温度调节强度
+    #LAMBDA: 0.7    # 不确定性权重
+    #GAMMA: 0.8     # 初始低温权重
+    #GAMMA_DECAY: 0.97  # 每epoch衰减率
+    #WARMUP: 5      # warmup轮次
+    CE_WEIGHT: 1
+    #KD_WEIGHT: 3.0
+    DUKD_WEIGHT: 1
+    WARMUP: 20     # warmup轮次
+    T_t: 5.0
+    T_s: 5.0
+    A: 0.7
+    B: 0.3
+    MIN_N: 0.3
+    N: 30
+    TEMPERATURE: 1.0
